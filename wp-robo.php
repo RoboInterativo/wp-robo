@@ -7,7 +7,7 @@ Version:  0.01
 Author: Aleksey Shilo
 Author http://robointerativo.org
 */
-/*  Copyright ГОД  ИМЯ_АВТОРА_ПЛАГИНА  (email: E-MAIL_АВТОРА)
+/*  Copyright 2018 Aleksey Shilo   (email: info@robointerativo.org)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -23,5 +23,12 @@ Author http://robointerativo.org
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
+
+add_action('admin_menu', function(){
+	add_menu_page('WP Robo', 'WP ROBO', 'manage_options', 'wp_robo_main', function(){require 'main.php';}, 'dashicons-megaphone' , 25);
+	_submenu_page('telegram_main', __('Settings', 'wp-robo'), __('Settings', 'wp-robo'), 'manage_options', 'wp_robo_settings', function(){require 'settings.php';});
+
+});
+}
 ?>
 
