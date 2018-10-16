@@ -26,7 +26,7 @@ Author http://robointerativo.org
 
 add_action('admin_menu', function(){
 	add_menu_page('WP Robo', 'WP ROBO', 'manage_options', 'wp_robo_main', function(){require 'main.php';}, 'dashicons-megaphone' , 25);
-	_submenu_page('telegram_main', __('Settings', 'wp-robo'), __('Settings', 'wp-robo'), 'manage_options', 'wp_robo_settings', function(){require 'settings.php';});
+	add_submenu_page('telegram_main', __('Settings', 'wp-robo'), __('Settings', 'wp-robo'), 'manage_options', 'wp_robo_settings', function(){require 'settings.php';});
 
 });
 }
